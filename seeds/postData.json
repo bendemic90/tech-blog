@@ -1,14 +1,14 @@
 [
   {
-    "name": "techblogson",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area."
+    "name": "Blog 1",
+    "description": "A blog about things."
   },
   {
-    "name": "test blog two",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+    "name": "Blog 2",
+    "description": "Another blog but this time about more interesting things than Blog 1"
   },
   {
-    "name": "yet another test blog",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+    "name": "Blog 3",
+    "description": "The final form of blogging, superceding all previous blogs."
   }
 ]
