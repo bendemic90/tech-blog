@@ -2,13 +2,12 @@ const newPostHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#post-title').value.trim();
-  const post_body = document.querySelector('#post-body').value.trim();
   const description = document.querySelector('#post-desc').value.trim();
 
-  if (name && post_body && description) {
+  if (name && description) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ name, post_body, description }),
+      body: JSON.stringify({ name, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -22,21 +21,21 @@ const newPostHandler = async (event) => {
   }
 };
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+// const delButtonHandler = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE',
-    });
+//     const response = await fetch(`/api/projects/${id}`, {
+//       method: 'DELETE',
+//     });
 
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete project');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/profile');
+//     } else {
+//       alert('Failed to delete project');
+//     }
+//   }
+// };
 
 document
   .querySelector('#newPost')
