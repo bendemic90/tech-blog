@@ -8,7 +8,7 @@ const newReply = async (event) => {
     ];
 
     if (reply_text) {
-        const response = await fetch('/api/comments', {
+        const response = await fetch('/api/replies', {
             method: 'POST',
             body: JSON.stringify({
                 post_id,
