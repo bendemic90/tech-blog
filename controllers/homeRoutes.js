@@ -34,11 +34,14 @@ router.get('/post/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Reply,
+          attributes: ['reply_text']
+        }
       ],
     });
-
     const post = postData.get({ plain: true });
-
+    console.log(post)
     res.render('post', {
       ...post,
       logged_in: req.session.logged_in

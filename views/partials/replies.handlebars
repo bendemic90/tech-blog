@@ -1,0 +1,13 @@
+<div class="replies">
+    {{#each this}}
+    <div class="card">
+        <h3 class="card-header"></h3>
+        <section class="reply card-body">
+            <div class="text">
+                {{reply_text}}
+            </div>
+            <p>by {{user}} on {{date_created}}</p>
+        </section>
+    </div>
+    {{/each}}
+</div>

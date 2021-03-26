@@ -3,7 +3,13 @@
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <br>
+  {{#each replies}}
+  <h4>{{reply_text}} by {{user.name}}</h4>
+  {{/each}}
+  <hr>
   <input id="reply-body" style="background-color: darkgray;" placeholder="A snarky reply"></input><br><br>
   <button id="replyButton">Send</button>
 </div>
+{{#if logged_in}}
 <script src="/js/reply.js"></script>
+{{/if}}

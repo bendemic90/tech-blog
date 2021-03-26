@@ -14,7 +14,7 @@ Reply.init({
     },
     user_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'user',
             key: 'id'
@@ -22,7 +22,7 @@ Reply.init({
     },
     post_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'post',
             key: 'id'
@@ -32,6 +32,7 @@ Reply.init({
 {
     sequelize,
     freezeTableName: true,
+    timestamps: true,
     underscored: true,
     modelName: 'reply'
 });
