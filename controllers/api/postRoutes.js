@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { Post, Reply } = require('../../models');
+const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-  try {
-    res.status(200).json({ message: `success` });
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
+// router.get('/', async (req, res) => {
+//   try {
+//     res.status(200).json({ message: `success` });
+//   } catch (err) {
+//     res.status(500).json(err)
+//   }
+// })
 
 router.post('/', withAuth, async (req, res) => {
   try {

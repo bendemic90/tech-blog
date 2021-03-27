@@ -1,30 +1,16 @@
 const router = require('express').Router();
-const { Reply, Post } = require('../../models');
+const { Reply } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //get all replies
-router.get('/', (req, res) => {
-  Reply.findAll({})
-    .then(reply => res.json(reply))
-    .catch(err => {
+router.get('/', async (req, res) => {
+    try {
+        const allrep = await Reply.findAll({});
+        res.status(200).json(allrep)
+    } catch (err) {
         res.status(500).json(err)
-    })
+    }
 });
-
-//get one reply
-// router.get('/:id', async (req, res) => {
-//     try {
-//         const oneRep = await Reply.findOne({
-//             where: {
-//                 id: req.params.id,
-//             }
-//         })
-//         res.json(oneRep);
-//         console.log(oneRep);
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// });
 
 //post a reply with auth
 router.post('/', withAuth, async (req, res) => {
