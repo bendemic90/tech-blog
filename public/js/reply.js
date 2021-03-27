@@ -14,7 +14,7 @@ const newReply = async (event) => {
         });
         console.log(response);
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace(`/post/${post_id}`);
 
         } else {
             alert('Reply failed')

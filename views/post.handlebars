@@ -3,8 +3,8 @@
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <br>
-  {{#each replies}}
-  <h4>{{reply_text}} by {{user.name}}</h4>
+  {{#each replies as |reply|}}
+  <h5>{{reply_text}}</h5>
   {{/each}}
   <hr>
   <input id="reply-body" style="background-color: darkgray;" placeholder="A snarky reply"></input><br><br>
